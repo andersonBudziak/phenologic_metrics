@@ -1,0 +1,19 @@
+Date,Value,Phenologic
+2023-05-25,0.1241977023277602,vos_start
+2023-10-17,0.10877612082367732,vos_end
+2023-06-24,0.8895436788239792,pos
+2023-05-26,0.17030566671143862,bos_der
+2023-08-25,0.48258392042808623,eos_der
+2023-05-29,0.30862955986247387,bos_abs
+2023-09-02,0.29903194283580525,eos_abs
+,145.0,Days between vos_end and vos_start
+,-96.0,Days between bos_abs and eos_abs
+,0.5809141189615054,NDVI difference between bos_abs and pos
+,-26.0,Days difference between bos_abs and pos
+,4.0,Days difference between vos_start and bos_abs
+,0.18443185753471367,NDVI difference between vos_start and bos_abs
+,45.0,Days difference between vos_end and eos_abs
+,0.590511735988174,NDVI difference between eos_abs and pos
+,-70.0,Days difference between eos_abs and pos
+,0.19025582201212793,NDVI difference between eos_abs and vos_end
+,0.0,Count 85% percentiles days between bos_abs and eos_abs

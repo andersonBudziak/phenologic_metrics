@@ -71,6 +71,11 @@ class PhenologyPlotter:
             xaxis_range=[vos_start_date, vos_end_date],
             plot_bgcolor=background_color,
             paper_bgcolor=background_color,
+            legend=dict(
+            x=0.01,
+            y=0.99,
+            font=dict(size=10)
+        )
         )
 
         return fig
@@ -110,3 +115,42 @@ class PhenologyPlotter:
         fig.update_yaxes(title_text="<b>EVI</b> values", secondary_y=True)
 
         return fig
+    
+
+
+    def plot_data_02(self, start_date, end_date):
+
+        """Create and display a Plotly graph with vegetation index and phenology data."""
+        self.convert_dates()
+        # Colors and other styling
+        base_color = '#642834'
+        other_colors = ['#B19470', '#76453B', '#304D30', '#114232', '#F7F6BB', '#FF9800', '#90D26D']
+        background_color = '#FFFFFF'
+
+        fig = fig = go.Figure()
+
+        # Adding traces
+        fig.add_trace(go.Scatter(x=self.df_index['timestamps'], y=self.df_index[self.vegetation_index], mode='lines', name='Vegetation Index', line=dict(color=other_colors[3])))
+        fig.add_trace(go.Scatter(x=self.df_index['timestamps'], y=self.df_index['savitzky_golay'], mode='lines', name='Savitzky-Golay', line=dict(color=base_color, dash='dash')))
+
+
+        fig.add_trace(go.Scatter(x=list(self.df_index['date_image']), y=list(self.df_index[self.vegetation_index]), mode='markers', name='Base images', marker=dict(color='#642834', size=5)))
+
+        fig.update_layout(
+            title_text="GCERLab Phenologics Metrics and Expenses",
+            xaxis_title="Date",
+            yaxis_title="NDVI",
+            xaxis_range=[start_date, end_date],
+            #plot_bgcolor=background_color,
+            #paper_bgcolor=background_color,
+            legend=dict(
+            x=0.01,
+            y=0.99
+        )
+        )
+
+        return fig
+
+    
+
+

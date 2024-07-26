@@ -9,9 +9,9 @@ class VegetationIndexProcessor:
         self.poly_order = poly_order
 
     def process(self):
-        if len(self.df) < 15:
-            print('Not enough images!')
-            return self.df
+        #if len(self.df) < 15:
+        #    print('Not enough images!')
+        #    return self.df
 
         # Smooth time series the index
         self.df['savitzky_golay'] = savgol_filter(
